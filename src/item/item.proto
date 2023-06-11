@@ -1,0 +1,19 @@
+// item/item.proto
+syntax = "proto3";
+
+package item;
+
+
+service ItemService {
+  rpc ListItemTypeORMStream (Empty) returns (stream ItemResponse) {}
+  rpc ListItemPgStream (Empty) returns (stream ItemResponse) {}
+}
+
+message ItemResponse {
+  int32 id = 1;
+  string label = 2;
+}
+
+message Empty {
+
+}
